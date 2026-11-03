@@ -293,7 +293,7 @@ mkdir -p ~/.claude/skills && cp -r skills/* ~/.claude/skills/
 | 版本 | 日期 | 内容 |
 |---|---|---|
 | **v2.0.0** | 2026-11-03 | 重构为 4 个 skill;主 skill 参考文件 11 → 19;新增综述、审稿回复、风格档案三件 |
-| v1.0.0 | 2026-06-03 | 单 skill,11 个参考文件 |
+| v1.0.0 | 2026-06-03 | 单 skill,11 个参考文件（[归档下载](https://github.com/Xiangyu-Ge/sci-writing-geors/releases/tag/v1.0.0)） |
 
 详细变更见 [`CHANGELOG.md`](CHANGELOG.md)。
 
