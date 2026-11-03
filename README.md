@@ -142,12 +142,13 @@ sci-writing-geors/
 | 工具 | 放到哪里 | 生效方式 |
 |---|---|---|
 | Claude Code | `~/.claude/skills/`(全局)或项目 `.claude/skills/` | 自动发现 |
-| Codex CLI | `~/.codex/skills/` | 自动发现 |
+| Codex CLI | `~/.agents/skills/`(用户级)或仓库 `.agents/skills/` | 自动发现,也可 `$技能名` 调用 |
 | Kimi Code CLI | `~/.config/agents/skills/`(推荐)或 `~/.kimi/skills/` | 自动发现,也可 `/skill:<名字>` 手动调 |
 | DSH（DeepSeek Harness） | `~/.dsh/skills/` | 自动发现 |
 | Claude.ai 网页 / App | 设置里上传 zip | 自动调用 |
+| ChatGPT | Plugins → Skills → Upload from your computer | 自动调用 |
+| Kimi 网页版 / App | Agent 模式里用 `/skill-creator` 创建 | 输入 `/` 调起 |
 | WorkBuddy | 「技能」板块上传 zip | 上传后自动配置 |
-| ChatGPT | 内置 Skills 功能 | 见[官方文档](https://learn.chatgpt.com/docs/build-skills) |
 | Claude API | Skills API 上传,用 `skill_id` 挂载 | 程序化调用 |
 
 > 💡 Kimi Code CLI 会回退读取 `~/.claude/skills/`,放进这一个目录就能同时被 **Claude Code 和 Kimi** 使用。
@@ -169,9 +170,9 @@ mkdir -p ~/.claude/skills && cp -r skills/* ~/.claude/skills/
 
 > ⚠️ Claude.ai 需要 **Pro / Max / Team / Enterprise** 套餐并开启代码执行(免费版无法上传自定义技能)。自定义技能按用户单独存储,**不会在 claude.ai、API、Claude Code 之间同步**;Team / Enterprise 的 Owner 可以把技能在组织范围内统一下发。
 
-### 没有技能目录的平台
+### 没有技能机制的平台
 
-Kimi 网页版、DeepSeek 网页版 / App 没有读取本地目录的能力,只能把 `SKILL.md` 贴进自定义指令,`references/` 用到哪章发哪份。具体做法和局限见 [INSTALL.md](INSTALL.md)。
+DeepSeek 网页版 / App 没有技能机制,只能把 `SKILL.md` 贴进自定义指令,`references/` 用到哪章发哪份。想在 DeepSeek 生态里自动调用就用 DSH。具体做法和局限见 [INSTALL.md](INSTALL.md)。
 
 📖 官方说明:
 - Agent Skills 标准:<https://agentskills.io>
