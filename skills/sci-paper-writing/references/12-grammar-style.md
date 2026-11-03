@@ -1,4 +1,4 @@
-# 09 · 语法与文风:时态、衔接、确定性、主被动
+# 12 · 语法与文风:时态、衔接、确定性、主被动
 
 这是 SCI 写作的"暗规则"集合。规则少,但每一条都直接影响审稿人对论文的判断。
 
@@ -181,7 +181,7 @@ This effect   These networks  Such systems
 
 #### 武器 4:信号词(signal connector)
 
-详见 `08-vocabulary.md` 第 13 节。
+详见 `11-vocabulary.md` 第 13 节。
 
 **警告**:信号词是**emphatic**(强调性的)。每句开头都用 → 文章变得机械、急促。
 
@@ -698,7 +698,7 @@ Use 2: 替代逗号 / 括号(更强的语气)
   Three factors — temperature, pressure, and time — affect this process.
 ```
 
-⚠️ **破折号对国际读者不直观**。如果文章读者很国际化,**用括号 / 逗号替代**。
+⚠️ **破折号对国际读者不直观**,而且频繁使用是公认的 AI 写作痕迹。一段里最多一处,能用括号、逗号或拆句代替就代替。
 
 ### 14.4 括号
 
@@ -711,7 +711,7 @@ Use: 补充信息(可选)
 
 ### 14.5 不要的标点
 
-- **感叹号**(!):学术写作里不用。用 *strikingly, remarkably* 替代。
+- **感叹号**(!):学术写作里不用。也不要用 *strikingly, remarkably* 代替,强调交给数字和对比(见 `11-vocabulary.md` §8.3)。
 - **不必要的逗号**:简单主谓宾不要中间打逗号。
 
 ---
@@ -744,7 +744,7 @@ Use: 补充信息(可选)
 | 过度使用 "indeed / in fact" | 像在加重语气,实则空洞 | 删掉,看句子有没有损失;通常没损失 |
 | 过度使用 "basically / essentially" | 空洞 | 删掉 |
 | 过度使用 "clearly / obviously" | 暗示读者笨 | 删掉 |
-| 过度使用 "very / so / really" | 形容词上的"补丁" | 用更强的形容词替代:*very important* → *crucial* |
+| 过度使用 "very / so / really" | 形容词上的"补丁" | 说清楚"重要在哪":*very important* → *controls X* / *accounts for 40% of X* |
 | 句尾堆 prepositional phrases | 句子越走越长 | 用从句或拆句 |
 | 滥用 "however" 在每段开头 | 段段都"然而",读者疲劳 | 多用重复 / 代词衔接 |
 | 滥用 "it" 作主语 | 指代不明 | 用具体名词 |

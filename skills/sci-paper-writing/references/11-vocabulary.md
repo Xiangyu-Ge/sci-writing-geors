@@ -1,6 +1,6 @@
-# 08 · 高频词汇与句式总库
+# 11 · 高频词汇与句式总库
 
-本文件是 SCI 写作的"工具箱"——当用户卡在"这里怎么说"时,**直接来这里查**。所有词汇均从 2500+ 篇 STEMM 顶刊已发表论文中提取,确认是当前编辑/读者接受的"标准用法"。
+本文件是 SCI 写作的"工具箱"——当用户卡在"这里怎么说"时,**直接来这里查**。词汇按写作功能整理，主要来自科研写作教材（Glasman-Deal, *Science Research Writing*）与地理/遥感期刊的常见用法。标 ⚠ 的词是公认的 AI 高频词（见 `13-critical-writing-de-ai.md`），能换就换，不能换时一篇里也只用一两次。
 
 ## 使用方法
 
@@ -17,7 +17,7 @@
 2. [描述研究活动的动词](#2-描述研究活动的动词)
 3. [指出研究空白](#3-指出研究空白)
 4. [描述本文工作](#4-描述本文工作)
-5. ["Happy Words":显式标记贡献](#5-happy-words显式标记贡献)
+5. [标记贡献:用事实,不用评价形容词](#5-标记贡献用事实不用评价形容词)
 6. [方法相关](#6-方法相关)
 7. [图表引用](#7-图表引用)
 8. [描述结果](#8-描述结果)
@@ -40,7 +40,7 @@
 (a) central problem         common / commonly
 (a) challenging area        cost-effective
 (a) considerable number     during the past (two) decades
-(a) crucial issue           emerging
+(a) crucial issue ⚠           emerging
 (a) current challenge       extensively studied
 (a) dramatic increase       for many years
 (an) essential element      frequent / frequently
@@ -54,17 +54,17 @@
 (a) leading cause (of)      numerous investigations
 (a) number of               of growing / great interest
 (a) popular method          often
-(a) powerful tool/method    play a key / major role (in)
+(a) powerful tool/method ⚠    play a key / major role (in)
 (a) primary cause (of)      principle
 (a) (wide) range (of)       recent / recently
 (a) rapid development       relevant
-(a) remarkable variety      several
+(a) remarkable variety ⚠      several
 (a) significant increase    today
-(a) striking feature        typical
+(a) striking feature ⚠        typical
 (a) traditional technique   valuable
 (a) useful method           well-documented
 (a) variety of              well-known
-(a) vital aspect            wide / widely
+(a) vital aspect ⚠            wide / widely
 (a) worthwhile study        widespread / worldwide
 ```
 
@@ -227,11 +227,9 @@ little work has been done
 - *To address this question, **we investigated**...*
 - *Section V **provides several relevant conclusions** obtained from the study reported in this paper.*
 - *The main objective of this study was to describe and examine...*
-- *In this paper **we present a robust method** for...*
-- *The proposed method combines GWAS data with information from bioinformatics databases.*
-- *In this study, **we carefully identified** and isolated...*
-- *New correlations **were developed with excellent results**.*
-- *We show that use of glass reactors can be **effective**.*
+- *In this paper **we present a method** that reduces retrieval error by...*
+- *The proposed method combines Sentinel-1 backscatter with Sentinel-2 spectral indices.*
+- *In this study, **we identified** the predictors that...*
 - ***To our knowledge, this is the first demonstration of** the...*
 - *This paper **introduces a scheme which solves** these problems.*
 - *To address this issue, **we present experiments** using an MCP.*
@@ -240,73 +238,40 @@ little work has been done
 
 ---
 
-## 5. "Happy Words":显式标记贡献
+## 5. 标记贡献:用事实,不用评价形容词
 
-按用途分组。
+贡献要显式说出来,但靠可验证的事实,而不是 novel、robust、comprehensive 这类评价形容词。审稿人会要求你证明 "novel" 在哪里;事实不需要证明。
 
-### 5.1 性能 / 能力
-
-```
-able to               powerful
-accurate              practical
-advantageous          precise
-beneficial            quantitative
-capable (of)          reliable
-cost-effective        reproducible
-effective             robust
-efficient             scalable
-excellent             sensitive
-fast                  significant
-flexible              simple
-fully (e.g. fully automated)  state-of-the-art
-generalizable         straightforward
-high-performance      strong
-high-quality          successful
-high-resolution       superior
-high-throughput       systematic
-informative           transferable
-innovative            unique
-intuitive             unprecedented
-new                   valid
-novel                 valuable
-optimal               versatile
-                      well-validated
-                      widely applicable
-```
-
-### 5.2 影响 / 价值
+### 5.1 可以写的事实
 
 ```
-addresses (a key)...           promising
-advances (the field of)...     pivotal
-breakthrough                   provides new insights into
-contributes to                 paves the way for
-critical                       seminal
-enables / facilitates          significant contribution
-fundamental                    timely
-groundbreaking                 transformative
-impactful                      vital
-important
-informative
-key contribution
-landmark
+分辨率与范围    10 m / 30 m;wall-to-wall;pixel-level;basin-wide;across X oases
+时间            2000–2022;23-year;annual;multi-temporal
+数据            multi-source;radar–optical;validated against N independent samples
+性能            R² = 0.81;RMSE reduced by 18%;bias reduced from −4.1 to −1.6 dS/m
+对象数量        across 1,200 sites;in 15 river basins
 ```
+
+### 5.2 "首次"的写法
+
+只在系统检索文献、确认确实为首次之后使用,并限定范围:
+
+- *To our knowledge, this is the first pixel-level attribution of vegetation change in the Tarim Basin.*
+- 不写没有限定的 *the first study*
 
 ### 5.3 例句
 
-- *We propose **a novel and robust framework** for...*
-- *Our approach is both **fast and accurate**.*
-- *This work provides **the first quantitative evidence** that...*
-- *The proposed method is **scalable to industrial settings**.*
-- *To our knowledge, this is **the first demonstration of...***
-- *The framework **addresses a critical gap** in the literature.*
-- *This work **paves the way for** next-generation...*
+- ❌ *We propose a novel and robust framework for salinity retrieval.*
+- ✅ *We developed a stacking ensemble that reduced salinity RMSE by 18% relative to random forest.*
+- ❌ *This study provides comprehensive insights into vegetation dynamics.*
+- ✅ *This study separates climatic and human contributions to vegetation change at 30 m for 2000–2022.*
 
-### 5.4 节制原则
+### 5.4 需要回避的评价词
 
-**一段话里 happy words 数量 ≤ 3 个**。否则像广告。
-**英文学术界对 happy words 的容忍度比中文高**,但仍然有度。
-**Happy words 必须真实**——审稿人会要求你证明 "novel" 在哪里。
+```
+novel  robust  comprehensive  powerful  innovative  unprecedented  groundbreaking
+transformative  seminal  pivotal ⚠  vital ⚠  crucial ⚠  paves the way for  sheds light on ⚠
+```
 
 ---
 
@@ -493,25 +458,25 @@ is / was uniform         increase / d               vary / varied
 | substantially | slightly |
 | significantly | marginally |
 | markedly | barely |
-| notably | a small fraction |
+| (notably ⚠) | a small fraction |
 | considerably | minor |
-| striking | a modest |
-| remarkable |  |
+| (striking ⚠) | a modest |
+| (remarkable ⚠) |  |
 | pronounced |  |
 | evident |  |
 | obvious |  |
 
-### 8.3 "惊叹号替代词"(`!`-substitutes)
+### 8.3 强调靠幅度,不靠强调词
+
+学术写作不用感叹号,也不必用 striking、remarkable、notably 这类词代替感叹号。强调交给数字和对比:
 
 ```
-striking         remarkable        surprisingly
-notable          extraordinary     notably
-significant      unprecedented     importantly
-considerable     impressive        interestingly
-substantial      profound          intriguingly
-                                   unexpectedly
-                                   curiously
+as much as 63% of the basin        only 9% of the area
+a 2.4-fold increase                from 0.64 to 0.81
+18% lower than RF                  three times the regional mean
 ```
+
+需要表达"出乎意料"时,直接说明与什么预期相反:*Contrary to the expected browning, NDVI increased in…*
 
 ---
 
@@ -677,7 +642,7 @@ arguably, perhaps, conceivably
 | **举例** | for example, for instance, e.g., specifically, in particular, namely, that is, i.e. | `e.g.` vs `i.e.`:前者举例,后者改述 |
 | **总结** | in summary, in short, in brief, to summarise, taken together, collectively, overall, on balance | — |
 | **重述** | in other words, that is to say, namely, i.e. | — |
-| **强调** | indeed, in fact, importantly, notably, crucially, of note | 慎用 `clearly / obviously` — 暗示读者不聪明 |
+| **强调** | indeed, in fact | importantly、notably、crucially ⚠ 是 AI 高频句首,改为把重点放进主句;慎用 `clearly / obviously`,暗示读者不聪明 |
 
 ### 13.2 句首 / 句中 / 句尾的位置
 
@@ -814,16 +779,18 @@ arguably, perhaps, conceivably
 变化检测: change detection, image differencing, post-classification comparison, change vector analysis (CVA), LandTrendr, BFAST, breakpoint / change point
 分级/统计: significantly increased/decreased, no significant change; accounted for X% of the area; expanded / shrank by X%; rate of change per year
 驱动归因: driving factors / drivers, attribution, residual trend analysis, partial correlation, multiple regression, geographical detector (geodetector), relative contribution of climate vs human activities (X% and Y%)
-表述: was associated with / can be attributed to / was largely driven by / may be partly explained by (见 09 确定性连续谱)
+表述: was associated with / can be attributed to / was largely driven by / may be partly explained by (见 12-grammar-style.md 确定性连续谱)
 ```
 
-## 20. 地理/遥感"happy words"与价值词
+## 20. 地理/遥感:可验证的产出特征
+
 ```
-multi-source / multi-sensor / multi-temporal     high-resolution / fine-resolution / 10 m
-radar–optical fusion                             wall-to-wall / spatially explicit
-first long-term / first regional / first wall-to-wall   transferable / generalizable
-operational / scalable / cost-effective          robust / reliable / accurate / quantitative
+multi-source / multi-sensor / multi-temporal     10 m / 30 m / 250 m
+radar–optical fusion                             wall-to-wall / pixel-level / basin-wide
+2000–2022 / 23-year / annual                     validated against N independent samples
 ```
+
+这些是事实描述,可以写进标题、摘要和 Highlights。robust、reliable、accurate 等评价词要换成对应的数字。
 
 ## 21. 单位与写法(地理/遥感约定)
 ```
