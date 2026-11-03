@@ -135,50 +135,59 @@ sci-writing-geors/
 
 ## 🚀 安装与使用
 
-装好后**无需手动开启**,模型会在相关请求时自动调用。
+四个技能都遵循 [Agent Skills](https://agentskills.io) 标准(`<技能名>/SKILL.md`),支持该标准的工具都能直接读,装好后无需手动开启。
 
-四个技能都遵循 [Agent Skills](https://agentskills.io) 标准(`<技能名>/SKILL.md`),主流支持该标准的工具都能直接读。**完整的分平台步骤见 [INSTALL.md](INSTALL.md)**。
+### 万能安装提示词
 
-> 🏃 **不想按平台一个个查?** 把 [INSTALL.md 里的万能安装提示词](INSTALL.md) 整段发给任意 AI 工具,让它读仓库或你上传的 zip 自己装。
+把它整段发给任意 AI 工具——Claude、ChatGPT、Codex、Kimi、WorkBuddy、DSH 都行,它会读仓库或你上传的 zip 自己装:
 
-| 工具 | 放到哪里 | 生效方式 |
-|---|---|---|
-| Claude Code | `~/.claude/skills/`(全局)或项目 `.claude/skills/` | 自动发现 |
-| Codex CLI | `~/.agents/skills/`(用户级)或仓库 `.agents/skills/` | 自动发现,也可 `$技能名` 调用 |
-| Kimi Code CLI | `~/.config/agents/skills/`(推荐)或 `~/.kimi/skills/` | 自动发现,也可 `/skill:<名字>` 手动调 |
-| DSH（DeepSeek Harness） | `~/.dsh/skills/` | 自动发现 |
-| Claude.ai 网页 / App | 设置里上传 zip | 自动调用 |
-| ChatGPT | Plugins → Skills → Upload from your computer | 自动调用 |
-| Kimi 网页版 / App | Agent 模式里用 `/skill-creator` 创建 | 输入 `/` 调起 |
-| WorkBuddy | 「技能」板块上传 zip | 上传后自动配置 |
-| Claude API | Skills API 上传,用 `skill_id` 挂载 | 程序化调用 |
+```text
+请帮我在当前工具里安装一个现成的 Agent Skill（技能包）。
 
-> 💡 Kimi Code CLI 会回退读取 `~/.claude/skills/`,放进这一个目录就能同时被 **Claude Code 和 Kimi** 使用。
+【来源】下面两样，你给我哪个就用哪个：
+· 我上传的 zip 附件
+· GitHub 仓库：https://github.com/Xiangyu-Ge/sci-writing-geors
 
-### 最快的一种
-
-```bash
-git clone https://github.com/Xiangyu-Ge/sci-writing-geors.git
-cd sci-writing-geors
-
-mkdir -p ~/.claude/skills && cp -r skills/* ~/.claude/skills/
+【要求】
+1. 先读内容，确认每个技能目录下有 SKILL.md，且 YAML 头部含 name 和 description。
+2. 用你平台自带的「创建技能 / 上传技能」功能，把下面四个技能分别建成独立技能，
+   不要合并成一个：
+   · sci-paper-writing（研究论文写作）
+   · geo-review-writing（综述与 Meta 分析）
+   · geo-reviewer-response（审稿意见回复）
+   · geo-writing-style（个人写作风格档案）
+3. name 和 description 保持原样，一个字都别改 —— description 决定这个技能会不会被
+   自动触发，改写之后就失效了。
+4. references/ 下的文件作为技能的支持资料一并带上；平台只收单个文件时，就以
+   SKILL.md 为主说明，其余算附件。
+5. 如果你的平台根本没有「技能」功能，就退一步：把 sci-paper-writing 的 SKILL.md
+   全文设成我的自定义指令 / 系统提示。
+6. 装完告诉我：四个技能的名字、装在哪里、怎么触发。哪一步做不到就直接说，
+   不要报告成功。
 ```
 
-之后直接说"用 sci-paper-writing 帮我润色讨论"即可。
+> 已经在用 Claude Code / Codex / Kimi Code / DSH 的,也可以手动放:
+> `cp -r skills/* ~/.claude/skills/`(Codex 用 `~/.agents/skills/`,Kimi 用 `~/.config/agents/skills/`,DSH 用 `~/.dsh/skills/`)。
 
-### 上传 zip 的平台
+### 验证
 
-`dist/` 下的 5 个 zip 解压后就是 `<技能名>/SKILL.md` 结构,Claude.ai 和 WorkBuddy 直接上传即可,也可以从 [Releases](https://github.com/Xiangyu-Ge/sci-writing-geors/releases/tag/v2.0.0) 下载。
+```text
+你现在有哪些技能？分别什么时候用？
+```
 
-> ⚠️ Claude.ai 需要 **Pro / Max / Team / Enterprise** 套餐并开启代码执行(免费版无法上传自定义技能)。自定义技能按用户单独存储,**不会在 claude.ai、API、Claude Code 之间同步**;Team / Enterprise 的 Owner 可以把技能在组织范围内统一下发。
+报得齐 `sci-paper-writing`、`geo-review-writing`、`geo-reviewer-response`、`geo-writing-style` 四个名字才算真装上。
 
-### 没有技能机制的平台
+### 装不上怎么办
 
-DeepSeek 网页版 / App 没有技能机制,只能把 `SKILL.md` 贴进自定义指令,`references/` 用到哪章发哪份。想在 DeepSeek 生态里自动调用就用 DSH。具体做法和局限见 [INSTALL.md](INSTALL.md)。
+| 现象 | 原因 |
+|---|---|
+| 报不出四个技能名 | 只是把文字读了一遍,没真正建成技能 |
+| 报得出名字但回答很泛 | 降级成提示词了,能用但不会自动触发 |
+| ChatGPT 找不到 Skills 入口 | 需要 Business / Enterprise / Healthcare / Edu 等套餐 |
+| Kimi 网页版没有"上传技能包" | 它不收 zip,只能用 `/skill-creator` 或文档转技能 |
+| 升级后行为没变 | v1 的 `skill.md` 与 v2 的 `SKILL.md` 冲突,先删旧目录再装 |
 
-📖 官方说明:
-- Agent Skills 标准:<https://agentskills.io>
-- Claude Skills 概览:<https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview>
+前置条件和完整排查见 [INSTALL.md](INSTALL.md)。
 
 ---
 
