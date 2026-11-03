@@ -13,6 +13,47 @@
 
 ---
 
+## 懒人版：把这段发给 AI，让它自己装
+
+不想按平台一个个查步骤，就把下面整段复制给任何一个支持技能的 AI。它读得懂仓库，也知道自己的安装入口在哪。
+
+```text
+请帮我在当前工具里安装一个现成的 Agent Skill（技能包）。
+
+【来源】下面两样,你给我哪个就用哪个：
+· 我上传的 zip 附件
+· GitHub 仓库：https://github.com/Xiangyu-Ge/sci-writing-geors
+
+【要求】
+1. 先读内容，确认每个技能目录下有 SKILL.md，且 YAML 头部含 name 和 description。
+2. 用你平台自带的「创建技能 / 上传技能」功能，把下面四个技能分别建成独立技能，
+   不要合并成一个：
+   · sci-paper-writing（研究论文写作）
+   · geo-review-writing（综述与 Meta 分析）
+   · geo-reviewer-response（审稿意见回复）
+   · geo-writing-style（个人写作风格档案）
+3. name 和 description 保持原样，一个字都别改 —— description 决定这个技能会不会被
+   自动触发，改写之后就失效了。
+4. references/ 下的文件作为技能的支持资料一并带上；平台只收单个文件时，就以
+   SKILL.md 为主说明，其余算附件。
+5. 如果你的平台根本没有「技能」功能，就退一步：把 sci-paper-writing 的 SKILL.md
+   全文设成我的自定义指令 / 系统提示。
+6. 装完告诉我：四个技能的名字、装在哪里、怎么触发。哪一步做不到就直接说，
+   不要报告成功。
+```
+
+装完用一句话验证：
+
+```
+你现在有哪些技能？分别什么时候用？
+```
+
+能报出四个名字就算成了。报不出来，多半是它只"读了一遍"却没真正建成技能——这种降级状态也能用，但不会自动触发。
+
+> 各平台的前置条件还是要留个心：ChatGPT 的技能目前面向 Business / Enterprise / Healthcare / Edu 等套餐；Kimi 要用 Agent 模式；Codex 可以直接说"用 `$skill-installer` 从这个仓库安装"。
+
+---
+
 ## 一、能直接吃技能包的工具
 
 | 工具 | 放哪里 | 怎么调用 |

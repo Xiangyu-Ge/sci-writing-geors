@@ -139,6 +139,8 @@ sci-writing-geors/
 
 四个技能都遵循 [Agent Skills](https://agentskills.io) 标准(`<技能名>/SKILL.md`),主流支持该标准的工具都能直接读。**完整的分平台步骤见 [INSTALL.md](INSTALL.md)**。
 
+> 🏃 **不想按平台一个个查?** 把 [INSTALL.md 里的万能安装提示词](INSTALL.md) 整段发给任意 AI 工具,让它读仓库或你上传的 zip 自己装。
+
 | 工具 | 放到哪里 | 生效方式 |
 |---|---|---|
 | Claude Code | `~/.claude/skills/`(全局)或项目 `.claude/skills/` | 自动发现 |
