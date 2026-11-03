@@ -50,22 +50,24 @@
   - 新增 `16-paper-types.md` 三类研究论文的写法
   - 新增 `17-ai-collaboration.md` AI 协同写作与学术诚信
   - 新增 `course-handout.md` 课程完整讲义
-  - 原有章节文件名改为带序号前缀，便于按顺序检索:
-    - `01-introduction.md` → `02-introduction.md`
-    - `02-methods.md` → `03-methods.md`
-    - `03-results.md` → `05-results.md`
-    - `04-discussion.md` → `06-discussion.md`
-    - `05-conclusion.md` → `07-conclusion.md`
-    - `06-abstract.md` → `08-abstract-highlights.md`（并入 Highlights 与 Graphical Abstract）
-    - `07-title.md` → `09-title.md`
-    - `08-vocabulary.md` → `11-vocabulary.md`
-    - `09-grammar-style.md` → `12-grammar-style.md`
-    - `10-checklist.md` → `15-checklist.md`
-    - `11-cover-letter.md` → `14-cover-letter-submission.md`（并入投稿材料与桌面拒稿）
+  - **全部 19 个文件直接取自《202610版地理学论文写作-审稿-回复skill》技能包，与源包逐字节一致**，未做改写、拼接或与 v1 合并
+  - v1 的 11 个参考文件已整体删除，**不是**把旧文件改名搬进 v2。下表只是内容对应关系，方便老用户找位置:
+    - `01-introduction.md` → `02-introduction.md`（重写）
+    - `02-methods.md` → `03-methods.md`（重写）
+    - `03-results.md` → `05-results.md`（重写）
+    - `04-discussion.md` → `06-discussion.md`（重写）
+    - `05-conclusion.md` → `07-conclusion.md`（重写）
+    - `06-abstract.md` → `08-abstract-highlights.md`（重写，并入 Highlights 与 Graphical Abstract）
+    - `07-title.md` → `09-title.md`（重写）
+    - `08-vocabulary.md` → `11-vocabulary.md`（续用并微调）
+    - `09-grammar-style.md` → `12-grammar-style.md`（续用并微调）
+    - `10-checklist.md` → `15-checklist.md`（重写）
+    - `11-cover-letter.md` → `14-cover-letter-submission.md`（重写，并入投稿材料与桌面拒稿）
+  - 上表 11 组中，标「续用」的 2 篇与 v1 文本高度重合（>90%），其余 9 篇为重写（<35%）。这些重合来自 v2 技能包本身，不是本次整理引入的
   - 论文类型由两类（定量反演 / 时空变化）扩展为三类，新增**观测对照**
 - **目录结构**改为 Agent Skills 标准布局:`skills/<skill-name>/SKILL.md`
-  - `skills/skill.md`（小写）→ `skills/sci-paper-writing/SKILL.md`
-  - `skills/references/*` → `skills/sci-paper-writing/references/*`
+  - v1 的 `skills/skill.md`（小写）与 `skills/references/` 已删除
+  - 新位置为 `skills/sci-paper-writing/`，主入口 `SKILL.md` 取自 v2 技能包（重写，178 → 109 行）
 - **README** 重写为四件套总览，补充协同流程图、v2 迁移说明、按 skill 的快速上手段落
 - **许可说明**改为如实描述，不再引用仓库中并不存在的 `LICENSE` 文件
 
