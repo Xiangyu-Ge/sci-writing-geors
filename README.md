@@ -82,6 +82,7 @@ flowchart LR
 ```
 sci-writing-geors/
 ├── README.md
+├── INSTALL.md                        # 各平台安装说明（Claude / Codex / Kimi / DSH / WorkBuddy…）
 ├── CHANGELOG.md
 ├── VERSION
 ├── skills/
@@ -136,40 +137,45 @@ sci-writing-geors/
 
 装好后**无需手动开启**,模型会在相关请求时自动调用。
 
-### 方式 A · Claude.ai 网页 / App
+四个技能都遵循 [Agent Skills](https://agentskills.io) 标准(`<技能名>/SKILL.md`),主流支持该标准的工具都能直接读。**完整的分平台步骤见 [INSTALL.md](INSTALL.md)**。
 
-1. 需要 **Pro / Max / Team / Enterprise** 套餐,并开启 **代码执行（code execution）**（免费版无法上传自定义技能）。
-2. 打开 **Settings（设置）→ Features（功能）**,找到自定义技能 / Skills。
-3. 上传 `dist/` 下的 **4 个 zip**（每个 zip 内已按 `<skill-name>/SKILL.md` 组织好）。
-4. 之后直接对话即可。
+| 工具 | 放到哪里 | 生效方式 |
+|---|---|---|
+| Claude Code | `~/.claude/skills/`(全局)或项目 `.claude/skills/` | 自动发现 |
+| Codex CLI | `~/.codex/skills/` | 自动发现 |
+| Kimi Code CLI | `~/.config/agents/skills/`(推荐)或 `~/.kimi/skills/` | 自动发现,也可 `/skill:<名字>` 手动调 |
+| DSH（DeepSeek Harness） | `~/.dsh/skills/` | 自动发现 |
+| Claude.ai 网页 / App | 设置里上传 zip | 自动调用 |
+| WorkBuddy | 「技能」板块上传 zip | 上传后自动配置 |
+| ChatGPT | 内置 Skills 功能 | 见[官方文档](https://learn.chatgpt.com/docs/build-skills) |
+| Claude API | Skills API 上传,用 `skill_id` 挂载 | 程序化调用 |
 
-> ⚠️ 自定义技能按用户单独存储,**不会在 claude.ai、API、Claude Code 之间同步**。
-> Team / Enterprise 的 Owner 可以把技能在组织范围内统一下发,整组共用。
+> 💡 Kimi Code CLI 会回退读取 `~/.claude/skills/`,放进这一个目录就能同时被 **Claude Code 和 Kimi** 使用。
 
-### 方式 B · Claude Code（命令行）
-
-技能是基于文件系统的,**不用上传**:
+### 最快的一种
 
 ```bash
 git clone https://github.com/Xiangyu-Ge/sci-writing-geors.git
 cd sci-writing-geors
 
-# 装到项目级
-mkdir -p .claude/skills && cp -r skills/* .claude/skills/
-
-# 或装到用户级(所有项目可用)
 mkdir -p ~/.claude/skills && cp -r skills/* ~/.claude/skills/
 ```
 
-之后在 Claude Code 里直接说"用 sci-paper-writing 帮我润色讨论"即可。
+之后直接说"用 sci-paper-writing 帮我润色讨论"即可。
 
-### 方式 C · Claude API / Platform
+### 上传 zip 的平台
 
-把 `dist/` 下的 zip 上传到你的 workspace（Skills API）,在请求的 `container` 参数里用 `skill_id` 指定,配合代码执行环境运行。适合批量处理或集成进自己的流程。
+`dist/` 下的 5 个 zip 解压后就是 `<技能名>/SKILL.md` 结构,Claude.ai 和 WorkBuddy 直接上传即可,也可以从 [Releases](https://github.com/Xiangyu-Ge/sci-writing-geors/releases/tag/v2.0.0) 下载。
+
+> ⚠️ Claude.ai 需要 **Pro / Max / Team / Enterprise** 套餐并开启代码执行(免费版无法上传自定义技能)。自定义技能按用户单独存储,**不会在 claude.ai、API、Claude Code 之间同步**;Team / Enterprise 的 Owner 可以把技能在组织范围内统一下发。
+
+### 没有技能目录的平台
+
+Kimi 网页版、DeepSeek 网页版 / App 没有读取本地目录的能力,只能把 `SKILL.md` 贴进自定义指令,`references/` 用到哪章发哪份。具体做法和局限见 [INSTALL.md](INSTALL.md)。
 
 📖 官方说明:
-- 概览:<https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview>
-- Claude.ai 帮助:<https://support.claude.com/en/articles/12512176-what-are-skills>
+- Agent Skills 标准:<https://agentskills.io>
+- Claude Skills 概览:<https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview>
 
 ---
 
